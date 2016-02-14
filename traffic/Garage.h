@@ -19,6 +19,8 @@ protected:
     int width;
     int height;
     VehiclePlacement &find(char marking);
+    bool have(char marking);
+    bool can_place(VehiclePlacement& vehicle);
 
     // actions
     vector<vector<char>> blank_board();

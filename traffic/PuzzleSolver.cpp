@@ -72,6 +72,11 @@ bool PuzzleSolver::solve_it() {
 }
 
 bool PuzzleSolver::solve_it_with_depth_limit() {
+    // Check if already solved.
+    if (current_garage.victory()) {
+        return true;
+    }
+
     // End recursion if we have reached the current limit.
     if (solution.distance() > search_limit) return false;
 
@@ -80,16 +85,10 @@ bool PuzzleSolver::solve_it_with_depth_limit() {
     // Try moving each vehicle in each of the two directions, recursing from the new position.
     for (char ch : vehicle_codes) {
         if (increment(ch)) {
-            if (current_garage.victory()) {
-                return true;
-            }
             if (solve_it_with_depth_limit()) return true;
             undo_increment(ch);
         }
         if (decrement(ch)) {
-            if (current_garage.victory()) {
-                return true;
-            }
             if (solve_it_with_depth_limit()) return true;
             undo_decrement(ch);
         }
@@ -100,15 +99,15 @@ bool PuzzleSolver::solve_it_with_depth_limit() {
 bool PuzzleSolver::increment(char ch) {
     // Check if it is possible to move the vehicle in the positive direction.
     if (current_garage.increment(ch)) {
+        solution.mark_increment(ch);
         // It is possible, but have we been here before this quickly?
         if (arrangement_is_novel()) {
             // Novel arrangement. Mark it down in the solution and report successful progress
-            solution.mark_increment(ch);
             return true;
         } else {
             // This arrangement has already been explored.
             // Put the vehicle back where it was and report no progress.
-            current_garage.decrement(ch);
+            undo_increment(ch);
         }
     }
     return false;
@@ -117,15 +116,15 @@ bool PuzzleSolver::increment(char ch) {
 bool PuzzleSolver::decrement(char ch) {
     // Check if it is possible to move the vehicle in the negative direction.
     if (current_garage.decrement(ch)) {
+        solution.mark_decrement(ch);
         // It is possible, but have we been here before this quickly?
         if (arrangement_is_novel()) {
             // Novel arrangement. Mark it down in the solution and report successful progress
-            solution.mark_decrement(ch);
             return true;
         } else {
             // This arrangement has already been explored.
             // Put the vehicle back where it was and report no progress.
-            current_garage.increment(ch);
+            undo_decrement(ch);
         }
     }
     return false;

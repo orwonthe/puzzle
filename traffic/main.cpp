@@ -6,7 +6,7 @@ void solve_and_explain(int puzzle_number) {
 }
 
 int main() {
-    int puzzles[] = {-1, 1, 2, 38, 39, 40};
+    int puzzles[] = {-1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 37, 38, 39, 40};
     for (int puzzle_number : puzzles) {
         solve_and_explain(puzzle_number);
     }

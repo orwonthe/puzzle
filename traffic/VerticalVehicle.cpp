@@ -26,3 +26,8 @@ void VerticalVehicle::location_bumped_by_decrement(int &x_position, int &y_posit
     x_position = 0;
     y_position = -1;
 }
+
+void VerticalVehicle::range(int &x, int &y) {
+    x = 1;
+    y = length;
+}

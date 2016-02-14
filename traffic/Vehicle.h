@@ -29,6 +29,7 @@ public:
     virtual bool is_occupied(int x, int y) = 0;
     virtual void location_bumped_by_increment(int &x_position, int &y_position) = 0;
     virtual void location_bumped_by_decrement(int &x_position, int &y_position) = 0;
+    virtual void range(int &x, int&y) = 0;
 
     // actions
     virtual void mark_board(vector<vector<char> > &board, int x, int y) = 0;

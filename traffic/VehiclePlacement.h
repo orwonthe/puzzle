@@ -25,6 +25,7 @@ public:
     bool is_occupied(int x, int y);
     void location_bumped_by_decrement(int &x_position, int &y_position);
     void location_bumped_by_increment(int &x_position, int &y_position);
+    void range(int &x_start, int &y_start, int &x_limit, int &y_limit);
 
     // actions
     void decrement();

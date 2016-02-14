@@ -24,6 +24,12 @@ void HorizontalVehicle::location_bumped_by_decrement(int &x_position, int &y_pos
     y_position = 0;
 }
 
+
+void HorizontalVehicle::range(int &x, int &y) {
+    x = length;
+    y = 1;
+}
+
 //
 // actions
 //

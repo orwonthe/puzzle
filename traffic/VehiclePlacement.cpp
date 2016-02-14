@@ -47,6 +47,15 @@ void VehiclePlacement::location_bumped_by_increment(int &x_position, int &y_posi
     y_position += y;
 }
 
+void VehiclePlacement::range(int &x_start, int &y_start, int &x_limit, int &y_limit) {
+    x_start = x;
+    y_start = y;
+    vehicle.range(x_limit, y_limit);
+    x_limit += x;
+    y_limit += y;
+}
+
+
 //
 // actions
 //

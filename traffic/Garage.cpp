@@ -21,6 +21,30 @@ VehiclePlacement &Garage::find(char marking) {
     }
 }
 
+
+bool Garage::have(char marking) {
+    for (VehiclePlacement &placed_vehicle : vehicles) {
+        if (placed_vehicle.identity() == marking) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Garage::can_place(VehiclePlacement &vehicle) {
+    int x_start;
+    int y_start;
+    int x_limit;
+    int y_limit;
+    vehicle.range(x_start, y_start, x_limit, y_limit);
+    for (int x=x_start; x < x_limit; x++) {
+        for (int y=y_start; y<y_limit; y++) {
+            if (is_occupied(x,y)) return false;
+        }
+    }
+    return true;
+}
+
 string Garage::signature() {
     string result = "";
     vector<vector<char> > puzzle_board = board();
@@ -80,8 +104,15 @@ vector<vector<char>> Garage::blank_board() {
 }
 
 void Garage::addVehicle(Vehicle &vehicle, int x, int y) {
+    if (have(vehicle.marking())) {
+        throw std::runtime_error("duplicate vehicle");
+    }
     VehiclePlacement placed_vehicle(vehicle, x, y);
-    vehicles.push_back(placed_vehicle);
+    if (can_place(placed_vehicle)) {
+        vehicles.push_back(placed_vehicle);
+    } else {
+        throw std::runtime_error("space already occupied");
+    }
 }
 
 bool Garage::increment(char marking) {

@@ -13,6 +13,7 @@ public:
 
     // properties
     virtual bool is_occupied(int x, int y);
+    virtual void range(int &x, int&y);
 
     // actions
     virtual void location_bumped_by_decrement(int &x_position, int &y_position);
