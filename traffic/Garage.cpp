@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <sstream>
 #include "Garage.h"
 
 using namespace std;
@@ -111,7 +112,9 @@ void Garage::addVehicle(Vehicle &vehicle, int x, int y) {
     if (can_place(placed_vehicle)) {
         vehicles.push_back(placed_vehicle);
     } else {
-        throw std::runtime_error("space already occupied");
+        std::stringstream errMsg;
+        errMsg << "space "<< x << "," << y << " already occupied";
+        throw std::runtime_error(errMsg.str().c_str());
     }
 }
 

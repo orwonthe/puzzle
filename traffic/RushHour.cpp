@@ -195,6 +195,69 @@ Garage RushHour::create_puzzle(int number) {
             puzzle.addVehicle(GreenVerticalCar, 5, 2);
             puzzle.addVehicle(TanVerticalCar, 5, 4);
             break;
+        case 10:
+            puzzle.addVehicle(PastelGreenCar, 0, 0);
+            puzzle.addVehicle(PinkCar, 0, 1);
+            puzzle.addVehicle(VioletVerticalTruck, 0, 2);
+            puzzle.addVehicle(BlackCar, 0, 5);
+            puzzle.addVehicle(RedCar, 1, 2);
+            puzzle.addVehicle(BlueTruck, 1, 3);
+            puzzle.addVehicle(OrangeVerticalCar, 2, 0);
+            puzzle.addVehicle(PurpleVerticalCar, 3, 4);
+            puzzle.addVehicle(CyanCar, 4, 0);
+            puzzle.addVehicle(GreenCar, 4, 4);
+            puzzle.addVehicle(TanCar, 4, 5);
+            puzzle.addVehicle(YellowVerticalTruck, 5, 1);
+            break;
+        case 11:
+            puzzle.addVehicle(YellowVerticalTruck, 0, 0);
+            puzzle.addVehicle(PastelGreenCar, 1, 0);
+            puzzle.addVehicle(RedCar, 1, 2);
+            puzzle.addVehicle(OrangeVerticalCar, 2, 3);
+            puzzle.addVehicle(GreenTruck, 2, 5);
+            puzzle.addVehicle(VioletVerticalTruck, 3, 0);
+            puzzle.addVehicle(BlueTruck, 3, 3);
+            puzzle.addVehicle(PurpleVerticalCar, 5, 4);
+            break;
+        case 12:
+            puzzle.addVehicle(PastelGreenVerticalCar, 0, 0);
+            puzzle.addVehicle(RedCar, 0, 2);
+            puzzle.addVehicle(GreenTruck, 0, 5);
+            puzzle.addVehicle(OrangeCar, 1, 0);
+            puzzle.addVehicle(VioletVerticalTruck, 2, 1);
+            puzzle.addVehicle(BlueTruck, 3, 3);
+            puzzle.addVehicle(CyanVerticalCar, 4, 4);
+            puzzle.addVehicle(YellowVerticalTruck, 5, 0);
+            break;
+        case 13:
+            puzzle.addVehicle(PastelGreenCar, 0, 0);
+            puzzle.addVehicle(VioletVerticalTruck, 0, 3);
+            puzzle.addVehicle(PurpleVerticalCar, 1, 2);
+            puzzle.addVehicle(YellowCar, 1, 5);
+            puzzle.addVehicle(OrangeCar, 2, 0);
+            puzzle.addVehicle(PinkVerticalCar, 2, 1);
+            puzzle.addVehicle(RedCar, 3, 2);
+            puzzle.addVehicle(GreenCar, 3, 3);
+            puzzle.addVehicle(BlackVerticalCar, 3, 4);
+            puzzle.addVehicle(CyanVerticalCar, 4, 0);
+            puzzle.addVehicle(TanCar, 4, 4);
+            puzzle.addVehicle(OliveCar, 4, 5);
+            puzzle.addVehicle(YellowVerticalTruck, 5, 1);
+            break;
+        case 14:
+            puzzle.addVehicle(GreenCar, 0, 0);
+            puzzle.addVehicle(PinkVerticalCar, 0, 2);
+            puzzle.addVehicle(OliveCar, 0, 5);
+            puzzle.addVehicle(PurpleVerticalCar, 1, 2);
+            puzzle.addVehicle(OrangeVerticalCar, 2, 0);
+            puzzle.addVehicle(RedCar, 2, 2);
+            puzzle.addVehicle(TanCar, 2, 3);
+            puzzle.addVehicle(YellowVerticalCar, 2, 4);
+            puzzle.addVehicle(CyanCar, 4, 1);
+            puzzle.addVehicle(GreenVerticalCar, 4, 2);
+            puzzle.addVehicle(BrownCar, 4, 4);
+            puzzle.addVehicle(BlackVerticalCar, 5, 2);
+            break;
         case 37:
             puzzle.addVehicle(PastelGreenCar, 0, 0);
             puzzle.addVehicle(PinkCar, 0, 1);
